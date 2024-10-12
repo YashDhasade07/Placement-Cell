@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('_bootstrap_meta') %>
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-color: #e6e9e9;
+            font-family: 'Poppins', sans-serif; /* Ensures consistent font usage */
+        }
+        .signup-container {
+            display: grid;
+            place-content: center;
+            width: 100%;
+            max-width: 530px; /* Ensures a maximum width */
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin: 5% auto;
+        }
+        h4 {
+            text-align: center;
+            color: #343a40; /* Darker color for better readability */
+        }
+        .form-label {
+            font-weight: 600; /* Makes labels more prominent */
+        }
+    </style>
+</head>
+<body>
+    <%- include('_header') %>
+    <div class="signup-container">
+        <h4>Sign Up</h4>
+        <form action="/users/create" method="post">
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="abc@email.com" name="email" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required />
+            </div>
+
+            <div class="mb-4 mt-3">
+                <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+            </div>
+        </form>
+        <div class="text-center mb-3">
+            <p>Already have an account? <a href="/users/signin">Log in Instead</a></p>
+        </div>
+    </div>
+    <%- include('_bootstrap_script') %>
+</body>
+</html>
